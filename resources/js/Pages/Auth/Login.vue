@@ -30,7 +30,6 @@ const submit = () => {
 </script>
 
 <template>
-        <Head title="Log in" />
     <MainLayout page-title="Login">
         <section class="grid grid-cols-2 gap-x-9 gap-y-9 p-4 justify-items-center content-center my-10">
             <div>

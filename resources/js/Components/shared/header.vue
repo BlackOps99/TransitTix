@@ -18,12 +18,12 @@ import { Link } from '@inertiajs/vue3';
                 </li>
             </ul>
         </nav>
-        <nav :class="{'hidden': route().current('login')}" class="my-3 mt-4 p-2 mr-[90px] text-white">
+        <nav class="my-3 mt-4 p-2 mr-[90px] text-white">
             <ul class="inline-flex gap-4">
-                <li class="w-20">
+                <li :class="{'hidden': route().current('login')}" class="w-20">
                     <Link class="p-3 text-[15px] font-semibold hover:bg-zinc-800 rounded-full transition ease-in-out duration-200" :href="route('login')">Login</Link>
                 </li>
-                <li>
+                <li :class="{'hidden': route().current('register')}">
                     <Link class="p-3 text-[15px] text-black bg-white font-semibold hover:bg-zinc-300 rounded-full transition ease-in-out duration-200" :href="route('register')">Register</Link>
                 </li>
             </ul>

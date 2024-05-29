@@ -9,8 +9,8 @@ import Footer from "@/Components/shared/footer.vue";
 
 <template>
     <Head title="Home"/>
+    <Header />
     <div class="bg-black text-white/50 mb-10 rounded-b-md">
-        <Header />
         <section class="bg-black flex justify-center rounded-b-md">
             <div class="container flex gap-4 justify-center items-center">
                 <div class="w-3/4 flex justify-center items-center mx-auto">

@@ -34,9 +34,9 @@ import WhiteButton from "@/Components/WhiteButton.vue"
                 </ul>
             </div>
         </div>
-        <section class="bg-black h-4/5 flex justify-center rounded-b-md">
+        <section class="bg-black flex justify-center rounded-b-md">
             <div class="container flex gap-4 justify-center items-center">
-                <div class="w-3/4 h-[85vh] flex justify-center items-center mx-auto">
+                <div class="w-3/4 flex justify-center items-center mx-auto">
                     <div class="flex flex-col justify-center items-start">
                         <div class="flex flex-col p-4">
                             <span class="text-white font-bold text-4xl mb-5">Book your Ride Now</span>
@@ -52,7 +52,7 @@ import WhiteButton from "@/Components/WhiteButton.vue"
                         </div>
                     </div>
                 </div>
-                <div class="w-3/4 h-[85svh] flex justify-center items-center">
+                <div class="w-3/4 my-10 flex justify-center items-center">
                     <img src="/images/home/Ride-with-Uber.webp" alt="ride-with-use"/>
                 </div>
             </div>

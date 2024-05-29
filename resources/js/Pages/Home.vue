@@ -2,38 +2,15 @@
 import {Head, Link} from '@inertiajs/vue3';
 import FloatingTextInput from '@/Components/FloatingTextInput.vue';
 import BlackButton from '@/Components/BlackButton.vue';
-import WhiteButton from "@/Components/WhiteButton.vue"
+import WhiteButton from "@/Components/WhiteButton.vue";
+import Header from '@/Components/shared/header.vue'
+import Footer from "@/Components/shared/footer.vue";
 </script>
 
 <template>
     <Head title="Home"/>
     <div class="bg-black text-white/50 mb-10 rounded-b-md">
-        <div class="bg-black flex justify-between px-20">
-            <div class="my-3 p-2 ml-[80px] text-white">
-                <span class="mr-20 text-[20px] font-bold">TransitTix</span>
-                <ul class="inline-flex gap-7">
-                    <li>
-                        <Link class="p-3 text-[15px] font-semibold hover:bg-zinc-800 rounded-full transition ease-in-out duration-200" href="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link class="p-3 text-[15px] font-semibold hover:bg-zinc-800 rounded-full transition ease-in-out duration-200" href="/">About</Link>
-                    </li>
-                    <li>
-                        <Link class="p-3 text-[15px] font-semibold hover:bg-zinc-800 rounded-full transition ease-in-out duration-200" href="/t">Help</Link>
-                    </li>
-                </ul>
-            </div>
-            <div class="my-3 p-2 mr-[90px] text-white">
-                <ul class="inline-flex gap-4">
-                    <li>
-                        <Link class="p-3 text-[15px] font-semibold hover:bg-zinc-800 rounded-full transition ease-in-out duration-200" href="/">Login</Link>
-                    </li>
-                    <li>
-                        <Link class="p-3 text-[15px] text-black bg-white font-semibold hover:bg-zinc-300 rounded-full transition ease-in-out duration-200" href="/t">Register</Link>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <Header />
         <section class="bg-black flex justify-center rounded-b-md">
             <div class="container flex gap-4 justify-center items-center">
                 <div class="w-3/4 flex justify-center items-center mx-auto">
@@ -84,7 +61,5 @@ import WhiteButton from "@/Components/WhiteButton.vue"
             <img src="/images/home/u4b-square.png" alt="ride-with-use"/>
         </div>
     </section>
-    <footer class="grid grid-cols-4 gap-x-9 gap-y-9 p-4 rounded-t-md bg-black justify-items-center content-center text-white h-40">
-        <span class="mr-20 text-[20px] font-semibold">TransitTix</span>
-    </footer>
+    <Footer />
 </template>

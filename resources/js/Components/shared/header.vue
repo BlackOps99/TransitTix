@@ -5,7 +5,7 @@ import { Link } from '@inertiajs/vue3';
 <template>
     <header class="bg-black flex justify-between px-20">
         <nav class="my-3 p-2 ml-[80px] text-white">
-            <span class="mr-20 text-[20px] font-bold">TransitTix</span>
+            <Link :href="route('home')" class="mr-20 text-[20px] font-bold">TransitTix</Link>
             <ul class="inline-flex gap-7">
                 <li>
                     <Link class="p-3 text-[15px] font-semibold hover:bg-zinc-800 rounded-full transition ease-in-out duration-200" href="/">Home</Link>
@@ -18,13 +18,13 @@ import { Link } from '@inertiajs/vue3';
                 </li>
             </ul>
         </nav>
-        <nav class="my-3 mt-4 p-2 mr-[90px] text-white">
+        <nav :class="{'hidden': route().current('login')}" class="my-3 mt-4 p-2 mr-[90px] text-white">
             <ul class="inline-flex gap-4">
                 <li class="w-20">
-                    <Link class="p-3 text-[15px] font-semibold hover:bg-zinc-800 rounded-full transition ease-in-out duration-200" href="/">Login</Link>
+                    <Link class="p-3 text-[15px] font-semibold hover:bg-zinc-800 rounded-full transition ease-in-out duration-200" :href="route('login')">Login</Link>
                 </li>
                 <li>
-                    <Link class="p-3 text-[15px] text-black bg-white font-semibold hover:bg-zinc-300 rounded-full transition ease-in-out duration-200" href="/t">Register</Link>
+                    <Link class="p-3 text-[15px] text-black bg-white font-semibold hover:bg-zinc-300 rounded-full transition ease-in-out duration-200" :href="route('register')">Register</Link>
                 </li>
             </ul>
         </nav>

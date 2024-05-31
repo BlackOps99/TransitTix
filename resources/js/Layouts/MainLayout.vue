@@ -14,9 +14,8 @@ defineProps({
 <template>
     <Head :title="pageTitle"/>
     <Header/>
-    <section class="container">
+    <section class="container min-h-screen flex justify-center">
         <slot/>
     </section>
     <Footer/>
 </template>
-

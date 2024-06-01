@@ -1,10 +1,10 @@
 <script setup>
 import {Head, Link} from '@inertiajs/vue3';
-import FloatingTextInput from '@/Components/FloatingTextInput.vue';
-import BlackButton from '@/Components/BlackButton.vue';
-import WhiteButton from "@/Components/WhiteButton.vue";
-import Header from '@/Components/shared/header.vue'
-import Footer from "@/Components/shared/footer.vue";
+import FloatingTextInput from '@/Components/form-elements/FloatingTextInput.vue';
+import BlackButton from '@/Components/form-elements/BlackButton.vue';
+import WhiteButton from "@/Components/form-elements/WhiteButton.vue";
+import Header from '@/Components/shared/Header.vue'
+import Footer from "@/Components/shared/Footer.vue";
 </script>
 
 <template>

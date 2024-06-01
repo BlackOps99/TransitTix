@@ -1,10 +1,10 @@
 <script setup>
-import DangerButton from '@/Components/DangerButton.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
+import DangerButton from '@/Components/form-elements/DangerButton.vue';
+import InputError from '@/Components/form-elements/InputError.vue';
+import InputLabel from '@/Components/form-elements/InputLabel.vue';
 import Modal from '@/Components/Modal.vue';
-import SecondaryButton from '@/Components/SecondaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
+import SecondaryButton from '@/Components/form-elements/SecondaryButton.vue';
+import TextInput from '@/Components/form-elements/TextInput.vue';
 import { useForm } from '@inertiajs/vue3';
 import { nextTick, ref } from 'vue';
 

@@ -1,11 +1,12 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
+import ApplicationLogo from "@/Components/shared/ApplicationLogo.vue";
 </script>
 
 <template>
     <header class="bg-black flex justify-between px-20">
         <nav class="my-3 p-2 ml-[80px] text-white">
-            <Link :href="route('home')" class="mr-20 text-[20px] font-bold">TransitTix</Link>
+            <ApplicationLogo />
             <ul class="inline-flex gap-7">
                 <li>
                     <Link class="p-3 text-[15px] font-semibold hover:bg-zinc-800 rounded-full transition ease-in-out duration-200" href="/">Home</Link>

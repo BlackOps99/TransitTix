@@ -1,9 +1,9 @@
 <script setup>
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import TextInput from '@/Components/TextInput.vue';
+import InputError from '@/Components/form-elements/InputError.vue';
+import InputLabel from '@/Components/form-elements/InputLabel.vue';
+import TextInput from '@/Components/form-elements/TextInput.vue';
 import {Link, useForm} from '@inertiajs/vue3';
-import BlackButton from "@/Components/BlackButton.vue";
+import BlackButton from "@/Components/form-elements/BlackButton.vue";
 import MainLayout from "@/Layouts/MainLayout.vue";
 
 defineProps({
@@ -31,11 +31,11 @@ const submit = () => {
 
 <template>
     <MainLayout page-title="Login">
-        <section class="grid grid-cols-2 gap-x-9 gap-y-9 p-4 justify-items-center content-center my-10">
+        <section class="flex justify-center my-20">
             <div>
                 <img src="/images/home/u4b-square.png" alt="ride-with-use"/>
             </div>
-            <div class="flex flex-col gap-5 justify-center w-full p-[80px]">
+            <div class="flex flex-col gap-5 justify-center p-[80px]">
                 <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
                     {{ status }}
                 </div>

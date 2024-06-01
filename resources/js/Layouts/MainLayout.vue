@@ -1,7 +1,7 @@
 <script setup>
 import {Head} from '@inertiajs/vue3';
-import Header from "@/Components/shared/header.vue";
-import Footer from "@/Components/shared/footer.vue";
+import Header from "@/Components/shared/Header.vue";
+import Footer from "@/Components/shared/Footer.vue";
 
 defineProps({
     pageTitle: {
@@ -14,7 +14,7 @@ defineProps({
 <template>
     <Head :title="pageTitle"/>
     <Header/>
-    <section class="container min-h-screen flex justify-center">
+    <section class="container">
         <slot/>
     </section>
     <Footer/>

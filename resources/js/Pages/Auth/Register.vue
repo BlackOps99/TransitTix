@@ -1,10 +1,10 @@
 <script setup>
 import MainLayout from '@/Layouts/MainLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import TextInput from '@/Components/TextInput.vue';
+import InputError from '@/Components/form-elements/InputError.vue';
+import InputLabel from '@/Components/form-elements/InputLabel.vue';
+import TextInput from '@/Components/form-elements/TextInput.vue';
 import { Link, useForm } from '@inertiajs/vue3';
-import BlackButton from "@/Components/BlackButton.vue";
+import BlackButton from "@/Components/form-elements/BlackButton.vue";
 
 const form = useForm({
     name: '',
@@ -22,8 +22,8 @@ const submit = () => {
 
 <template>
     <MainLayout page-title="Register">
-        <section class="grid grid-cols-2 gap-x-9 gap-y-9 p-4 justify-items-center content-center my-10">
-            <div class="flex flex-row-reverse justify-center w-full p-[80px]">
+        <section class="flex justify-center my-20">
+            <div class="flex flex-col justify-center p-[80px]">
                 <form @submit.prevent="submit">
                     <div>
                         <InputLabel for="name" value="Name" />

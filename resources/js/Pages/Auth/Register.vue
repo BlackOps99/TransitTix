@@ -7,8 +7,10 @@ import { Link, useForm } from '@inertiajs/vue3';
 import BlackButton from "@/Components/form-elements/BlackButton.vue";
 
 const form = useForm({
-    name: '',
+    first_name: '',
+    last_name: '',
     email: '',
+    phone: '',
     password: '',
     password_confirmation: '',
 });
@@ -26,18 +28,33 @@ const submit = () => {
             <div class="flex flex-col justify-center p-[80px]">
                 <form @submit.prevent="submit">
                     <div>
-                        <InputLabel for="name" value="Name" />
+                        <InputLabel for="first_name" value="First Name" />
 
                         <TextInput
-                            id="name"
+                            id="first_name"
                             type="text"
                             class="mt-1 block w-80"
-                            v-model="form.name"
+                            v-model="form.first_name"
                             required
-                            placeholder="Enter your name"
+                            placeholder="Enter your first name"
                         />
 
-                        <InputError class="mt-2" :message="form.errors.name" />
+                        <InputError class="mt-2" :message="form.errors.first_name" />
+                    </div>
+
+                    <div class="mt-4">
+                        <InputLabel for="last_name" value="Last Name" />
+
+                        <TextInput
+                            id="last_name"
+                            type="text"
+                            class="mt-1 block w-80"
+                            v-model="form.last_name"
+                            required
+                            placeholder="Enter your last name"
+                        />
+
+                        <InputError class="mt-2" :message="form.errors.last_name" />
                     </div>
 
                     <div class="mt-4">
@@ -53,6 +70,21 @@ const submit = () => {
                         />
 
                         <InputError class="mt-2" :message="form.errors.email" />
+                    </div>
+
+                    <div class="mt-4">
+                        <InputLabel for="phone" value="Phone" />
+
+                        <TextInput
+                            id="phone"
+                            type="number"
+                            class="mt-1 block w-80"
+                            v-model="form.phone"
+                            required
+                            placeholder="Enter your phone number"
+                        />
+
+                        <InputError class="mt-2" :message="form.errors.phone" />
                     </div>
 
                     <div class="mt-4">

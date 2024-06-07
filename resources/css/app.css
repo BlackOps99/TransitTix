@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    @font-face {
+        font-family: "Outfit";
+        src: url(Outfit-Regular.ttf) format("truetype");
+    }
+}
+
 /* total width */
 ::-webkit-scrollbar {
     background-color:#fff;

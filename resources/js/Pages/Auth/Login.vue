@@ -41,34 +41,31 @@ const submit = () => {
                 </div>
                 <div class="mb-5 flex flex-col">
                     <span class="font-bold text-lg">Login With you Email and Password you dont have one ?</span>
-                    <Link class="underline focus:outline-none font-normal text-base hover:text-black/50 transition ease-in-out duration-200"
-                          :href="route('register')">Go to register
+                    <Link
+                        class="underline focus:outline-none font-normal text-base hover:text-black/50 transition ease-in-out duration-200"
+                        :href="route('register')">Go to register
                     </Link>
                 </div>
                 <form @submit.prevent="submit">
                     <div>
-                        <InputLabel for="email">Email</InputLabel>
-                        <TextInput
-                            id="email"
-                            type="email"
-                            class="mt-1 block w-80"
-                            placeholder="Enter Your Email"
-                            v-model="form.email"
-                            required
-                        />
+                        <div class="relative">
+                            <input v-model="form.email" type="email" id="email"
+                                   class="block px-2.5 pb-2.5 pt-4 w-80 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-black peer"
+                                   placeholder=" " required/>
+                            <label for="email"
+                                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-hover:border-black peer-focus:px-2 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Email</label>
+                        </div>
                         <InputError class="mt-2" :message="form.errors.email"/>
                     </div>
 
                     <div class="mt-4">
-                        <InputLabel for="password">Password</InputLabel>
-                        <TextInput
-                            id="password"
-                            type="password"
-                            class="mt-1 block w-80"
-                            placeholder="Enter Your Password"
-                            v-model="form.password"
-                            required
-                        />
+                        <div class="relative">
+                            <input v-model="form.password" type="password" id="email"
+                                   class="block px-2.5 pb-2.5 pt-4 w-80 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-black peer"
+                                   placeholder=" " required/>
+                            <label for="password"
+                                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-hover:border-black peer-focus:px-2 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Password</label>
+                        </div>
                         <InputError class="mt-2" :message="form.errors.password"/>
                     </div>
 

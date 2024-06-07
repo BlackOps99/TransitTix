@@ -1,7 +1,6 @@
 <script setup>
 import {Head, Link} from '@inertiajs/vue3';
 import FloatingTextInput from '@/Components/form-elements/FloatingTextInput.vue';
-import BlackButton from '@/Components/form-elements/BlackButton.vue';
 import WhiteButton from "@/Components/form-elements/WhiteButton.vue";
 import Header from '@/Components/shared/Header.vue'
 import Footer from "@/Components/shared/Footer.vue";
@@ -41,21 +40,16 @@ import Footer from "@/Components/shared/Footer.vue";
         </div>
         <div class="flex flex-col gap-5 justify-center p-[80px]">
             <span class="m-3 text-black text-5xl font-bold">Go any place as you want, make what you need</span>
-            <span class="m-3">Make money on your schedule with deliveries or rides—or both. You can use your own car or choose a rental through Uber.</span>
+            <span class="m-3">Make money on your schedule with deliveries or rides—or both.</span>
             <div class="flex gap-4 m-3 items-center">
-                <BlackButton>Get started</BlackButton>
-                <Link class="text-base font-normal underline underline-offset-8" href="/">Already have an account? Sign in</Link>
+                <Link class="text-base font-normal underline underline-offset-8" :href="route('login')">Already have an account? Sign in</Link>
             </div>
         </div>
     </section>
     <section class="grid grid-cols-2 gap-x-9 gap-y-9 p-4 justify-items-center content-center mb-10">
         <div class="flex flex-col gap-5 justify-center p-[80px]">
             <span class="m-3 text-black text-5xl font-bold">Go any place as you want, make what you need</span>
-            <span class="m-3">Make money on your schedule with deliveries or rides—or both. You can use your own car or choose a rental through Uber.</span>
-            <div class="flex gap-4 m-3 items-center">
-                <BlackButton>Get started</BlackButton>
-                <Link class="text-base font-normal underline underline-offset-8" href="/">Already have an account? Sign in</Link>
-            </div>
+            <span class="m-3">Make money on your schedule with deliveries or rides—or both</span>
         </div>
         <div>
             <img src="/images/home/u4b-square.png" alt="ride-with-use"/>

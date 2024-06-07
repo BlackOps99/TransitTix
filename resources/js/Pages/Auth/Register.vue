@@ -28,93 +28,68 @@ const submit = () => {
             <div class="flex flex-col justify-center p-[80px]">
                 <form @submit.prevent="submit">
                     <div>
-                        <InputLabel for="first_name" value="First Name" />
-
-                        <TextInput
-                            id="first_name"
-                            type="text"
-                            class="mt-1 block w-80"
-                            v-model="form.first_name"
-                            required
-                            placeholder="Enter your first name"
-                        />
-
+                        <div class="relative">
+                            <input v-model="form.first_name" type="text" id="first_name"
+                                   class="block px-2.5 pb-2.5 pt-4 w-80 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-black peer"
+                                   placeholder=" " required/>
+                            <label for="first_name"
+                                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-hover:border-black peer-focus:px-2 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">First Name</label>
+                        </div>
                         <InputError class="mt-2" :message="form.errors.first_name" />
                     </div>
 
                     <div class="mt-4">
-                        <InputLabel for="last_name" value="Last Name" />
-
-                        <TextInput
-                            id="last_name"
-                            type="text"
-                            class="mt-1 block w-80"
-                            v-model="form.last_name"
-                            required
-                            placeholder="Enter your last name"
-                        />
-
+                        <div class="relative">
+                            <input v-model="form.last_name" type="text" id="last_name"
+                                   class="block px-2.5 pb-2.5 pt-4 w-80 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-black peer"
+                                   placeholder=" " required/>
+                            <label for="last_name"
+                                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-hover:border-black peer-focus:px-2 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Last Name</label>
+                        </div>
                         <InputError class="mt-2" :message="form.errors.last_name" />
                     </div>
 
                     <div class="mt-4">
-                        <InputLabel for="email" value="Email" />
-
-                        <TextInput
-                            id="email"
-                            type="email"
-                            class="mt-1 block w-80"
-                            v-model="form.email"
-                            required
-                            placeholder="Enter your username"
-                        />
-
+                        <div class="relative">
+                            <input v-model="form.email" type="email" id="email"
+                                   class="block px-2.5 pb-2.5 pt-4 w-80 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-black peer"
+                                   placeholder=" " required/>
+                            <label for="email"
+                                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-hover:border-black peer-focus:px-2 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Email</label>
+                        </div>
                         <InputError class="mt-2" :message="form.errors.email" />
                     </div>
 
                     <div class="mt-4">
-                        <InputLabel for="phone" value="Phone" />
-
-                        <TextInput
-                            id="phone"
-                            type="number"
-                            class="mt-1 block w-80"
-                            v-model="form.phone"
-                            required
-                            placeholder="Enter your phone number"
-                        />
-
+                        <div class="relative">
+                            <input v-model="form.phone" type="text" id="phone"
+                                   class="block px-2.5 pb-2.5 pt-4 w-80 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-black peer"
+                                   placeholder=" " required/>
+                            <label for="phone"
+                                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-hover:border-black peer-focus:px-2 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Phone</label>
+                        </div>
                         <InputError class="mt-2" :message="form.errors.phone" />
                     </div>
 
                     <div class="mt-4">
-                        <InputLabel for="password" value="Password" />
-
-                        <TextInput
-                            id="password"
-                            type="password"
-                            class="mt-1 block w-80"
-                            v-model="form.password"
-                            required
-                            placeholder="Enter your password"
-                        />
-
+                        <div class="relative">
+                            <input v-model="form.password" type="password" id="password"
+                                   class="block px-2.5 pb-2.5 pt-4 w-80 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-black peer"
+                                   placeholder=" " required/>
+                            <label for="password"
+                                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-hover:border-black peer-focus:px-2 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Password</label>
+                        </div>
                         <InputError class="mt-2" :message="form.errors.password" />
                     </div>
 
                     <div class="mt-4">
-                        <InputLabel for="password_confirmation" value="Confirm Password" />
-
-                        <TextInput
-                            id="password_confirmation"
-                            type="password"
-                            class="mt-1 block w-80"
-                            v-model="form.password_confirmation"
-                            required
-                            autocomplete="new-password"
-                            placeholder="Enter your password confirmation"
-                        />
-
+                        <div class="relative">
+                            <input v-model="form.password_confirmation" type="password" id="password_confirmation"
+                                   class="block px-2.5 pb-2.5 pt-4 w-80 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-black peer"
+                                   placeholder=" " required/>
+                            <label for="password_confirmation"
+                                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-hover:border-black peer-focus:px-2 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Password Confirmation</label>
+                        </div>
                         <InputError class="mt-2" :message="form.errors.password_confirmation" />
                     </div>
 

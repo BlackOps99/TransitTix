@@ -1,5 +1,8 @@
 import './bootstrap';
 import '../css/app.css';
+import '../libs/@mdi/font/css/materialdesignicons.min.css';
+import '../libs/@iconscout/unicons/css/line.css';
+import '../libs/tiny-slider/tiny-slider.css';
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';

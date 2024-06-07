@@ -1,10 +1,10 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/form-elements/InputError.vue';
 import InputLabel from '@/Components/form-elements/InputLabel.vue';
 import PrimaryButton from '@/Components/form-elements/PrimaryButton.vue';
 import TextInput from '@/Components/form-elements/TextInput.vue';
-import { Head, useForm } from '@inertiajs/vue3';
+import { useForm } from '@inertiajs/vue3';
+import MainLayout from "@/Layouts/MainLayout.vue";
 
 const form = useForm({
     password: '',
@@ -18,8 +18,7 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
-        <Head title="Confirm Password" />
+    <MainLayout :page-title="ConfirmPassword">
 
         <div class="mb-4 text-sm text-gray-600">
             This is a secure area of the application. Please confirm your password before continuing.
@@ -46,5 +45,5 @@ const submit = () => {
                 </PrimaryButton>
             </div>
         </form>
-    </GuestLayout>
+    </MainLayout>
 </template>

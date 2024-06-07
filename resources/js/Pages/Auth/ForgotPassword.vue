@@ -1,10 +1,10 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/form-elements/InputError.vue';
 import InputLabel from '@/Components/form-elements/InputLabel.vue';
 import PrimaryButton from '@/Components/form-elements/PrimaryButton.vue';
 import TextInput from '@/Components/form-elements/TextInput.vue';
-import { Head, useForm } from '@inertiajs/vue3';
+import { useForm } from '@inertiajs/vue3';
+import MainLayout from "@/Layouts/MainLayout.vue";
 
 defineProps({
     status: {
@@ -22,9 +22,7 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
-        <Head title="Forgot Password" />
-
+    <MainLayout :page-title="Forgot Password">
         <div class="mb-4 text-sm text-gray-600">
             Forgot your password? No problem. Just let us know your email address and we will email you a password reset
             link that will allow you to choose a new one.
@@ -57,5 +55,5 @@ const submit = () => {
                 </PrimaryButton>
             </div>
         </form>
-    </GuestLayout>
+    </MainLayout>
 </template>

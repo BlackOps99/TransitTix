@@ -4,7 +4,7 @@ import InputError from '@/Components/form-elements/InputError.vue';
 import InputLabel from '@/Components/form-elements/InputLabel.vue';
 import TextInput from '@/Components/form-elements/TextInput.vue';
 import { Link, useForm } from '@inertiajs/vue3';
-import BlackButton from "@/Components/form-elements/BlackButton.vue";
+import BlackButton from "@/Components/form-elements/OrangeButton.vue";
 
 const form = useForm({
     first_name: '',

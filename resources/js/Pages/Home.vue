@@ -1,4 +1,7 @@
 <script setup>
+import { ref, watch } from "vue";
+import Dropdown from 'primevue/dropdown';
+import Calendar from 'primevue/calendar';
 import {Head} from '@inertiajs/vue3';
 import Header from '@/Components/shared/Header.vue'
 import Footer from "@/Components/shared/Footer.vue";
@@ -9,6 +12,30 @@ const ScrollIntoView = (elem) => {
     let ele = document.querySelector(elem);
     ele.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+const fromCity = ref();
+const toCity = ref();
+const date = ref();
+
+const cities = ref([
+    { name: 'Cairo', code: 'cairo' },
+    { name: 'Alexandria', code: 'alexandria' },
+    { name: 'Luxor', code: 'luxor' },
+    { name: 'Hurghada', code: 'hurghada' },
+    { name: 'Qena', code: 'qena' },
+    { name: 'Assiut', code: 'assiut' }
+]);
+
+const originalCities = [...cities.value];
+const citiesTo = ref([...originalCities]);
+
+watch(fromCity, (newCity) => {
+    if (newCity) {
+        citiesTo.value = originalCities.filter(city => city.code !== newCity.code);
+    } else {
+        citiesTo.value = [...originalCities];
+    }
+});
 </script>
 
 <template>
@@ -34,19 +61,28 @@ const ScrollIntoView = (elem) => {
                         <form>
                             <div class="grid grid-cols-1">
                                 <div class="mb-5">
-                                    <label class="dark:text-white">From</label>
-                                    <input name="name" id="fName" type="text" class="form-input mt-2"
-                                           placeholder="Name :">
+                                    <div class="flex flex-col">
+                                        <label class="dark:text-white mb-2">From</label>
+                                        <Dropdown v-model="fromCity" :pt="{
+                                            root: { class: 'cursor-pointer text-black p-3 border border-[#ea580c] rounded-md' },
+                                        }" :options="cities" optionLabel="name" placeholder="Select a City" class="mt-2" />
+                                    </div>
                                 </div>
                                 <div class="mb-5">
-                                    <label class="dark:text-white">To</label>
-                                    <input name="email" id="yEmail" type="email" class="form-input mt-2"
-                                           placeholder="Email :">
+                                    <div class="flex flex-col">
+                                        <label class="dark:text-white mb-2">To</label>
+                                        <Dropdown v-model="toCity" :pt="{
+                                            root: { class: 'cursor-pointer text-black p-3 border border-[#ea580c] rounded-md' },
+                                        }" :options="citiesTo" optionLabel="name" placeholder="Select a City" class="mt-2" />
+                                    </div>
                                 </div>
                                 <div class="mb-5">
-                                    <label class="dark:text-white">Date</label>
-                                    <input name="number" id="phNumber" class="form-input mt-2"
-                                           placeholder="+12 12458 854">
+                                    <div class="flex flex-col">
+                                        <label class="dark:text-white mb-2">Date</label>
+                                        <Calendar v-model="date" :pt="{
+                                            input: { class: 'cursor-pointer text-black p-3 border border-[#ea580c] rounded-md' },
+                                        }" dateFormat="dd/mm/yy" showButtonBar/>
+                                    </div>
                                 </div>
                                 <a href="javascript:void (0)"
                                    class="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md w-full">Show Trips</a>

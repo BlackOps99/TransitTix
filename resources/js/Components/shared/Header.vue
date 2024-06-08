@@ -66,11 +66,11 @@ onUnmounted(() => {
                 <ul class="list-none menu-social mb-0">
                     <li class="inline">
                         <Link :href="route('login')"
-                              class="btn btn-sm bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full">Login</Link>
+                              :class="{'hidden': route().current('login')}" class="btn btn-sm bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full">Login</Link>
                     </li>
                     <li class="inline">
                         <Link :href="route('register')"
-                           class="btn btn-sm bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full">Register</Link>
+                              :class="{'hidden': route().current('register')}" class="btn btn-sm bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full">Register</Link>
                     </li>
                 </ul>
                 <!-- Navbar Collapse Manu Button -->

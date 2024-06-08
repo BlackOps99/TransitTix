@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TripController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -11,6 +12,8 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
     ]);
 })->name('home');
+
+Route::Resource('/trips', TripController::class);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

@@ -13,7 +13,7 @@ enum TripCitys: string
     case QENA = 'qena';
     case ASSIUT = 'assiut';
 
-    public static function getEnums(): array
+    public static function getEnumsArray(): array
     {
         return [
             self::CAIRO->value,

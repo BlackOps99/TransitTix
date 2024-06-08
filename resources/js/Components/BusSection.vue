@@ -26,10 +26,9 @@
 
                             <div
                                 class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-4 start-4 transition-all duration-500">
-                                <router-link to="/portfolio-detail"
-                                             class="h6 text-md font-medium text-white hover:text-orange-600 transition duration-500">Mockup
-                                    Collection</router-link>
-                                <p class="text-slate-100 tag mb-0">Abstract</p>
+                                <a href="javascript:void(0);"
+                                             class="h6 text-md font-medium text-white hover:text-orange-600 transition duration-500">Bus 1</a>
+                                <p class="text-slate-100 tag mb-0">Bus 1</p>
                             </div>
                         </div>
                     </div>
@@ -50,10 +49,9 @@
 
                             <div
                                 class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-4 start-4 transition-all duration-500">
-                                <router-link to="/portfolio-detail"
-                                             class="h6 text-md font-medium text-white hover:text-orange-600 transition duration-500">Mockup
-                                    Collection</router-link>
-                                <p class="text-slate-100 tag mb-0">Abstract</p>
+                                <a href="javascript:void(0);"
+                                             class="h6 text-md font-medium text-white hover:text-orange-600 transition duration-500">Bus 2</a>
+                                <p class="text-slate-100 tag mb-0">Bus 2</p>
                             </div>
                         </div>
                     </div>
@@ -74,10 +72,9 @@
 
                             <div
                                 class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-4 start-4 transition-all duration-500">
-                                <router-link to="/portfolio-detail"
-                                             class="h6 text-md font-medium text-white hover:text-orange-600 transition duration-500">Mockup
-                                    Collection</router-link>
-                                <p class="text-slate-100 tag mb-0">Abstract</p>
+                                <a href="javascript:void(0);"
+                                             class="h6 text-md font-medium text-white hover:text-orange-600 transition duration-500">Bus 3</a>
+                                <p class="text-slate-100 tag mb-0">Bus 3</p>
                             </div>
                         </div>
                     </div>

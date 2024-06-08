@@ -32,7 +32,7 @@ const submit = () => {
 </script>
 
 <template>
-    <MainLayout :page-title="Reset Password">
+    <MainLayout page-title="Reset Password">
         <form @submit.prevent="submit">
             <div>
                 <InputLabel for="email" value="Email" />

@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "flowbite": "^2.3.0",
+        "lodash": "^4.17.21",
         "primevue": "^3.52.0"
     }
 }

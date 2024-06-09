@@ -4,11 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Carbon;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Trip extends Model
 {
     use HasFactory;
+
+    protected $with = [
+        'bus'
+    ];
+
+    public function bus(): HasOne
+    {
+        return $this->hasOne(Bus::class);
+    }
 
     public function scopeFilter($query, array $filters)
     {

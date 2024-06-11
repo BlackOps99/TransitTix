@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\TripStatus;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -20,6 +22,7 @@ class TripController extends Controller
         ]);
 
         $trips = Trip::filter($request->only('fromCity', 'toCity', 'date'))
+            ->where('status', TripStatus::PENDING)
             ->paginate(15)
             ->withQueryString()
             ->through(fn ($trip) => [
@@ -30,6 +33,7 @@ class TripController extends Controller
                 'trip_price' => $trip->trip_price,
                 'trip_time' => Carbon::createFromFormat('H:i:s', $trip->trip_time)->format('g:i A'),
                 'trip_date' => $trip->trip_date,
+                'bus' => $trip->bus
             ]);
 
         return Inertia::render('Trips/Index', [

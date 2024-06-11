@@ -17,6 +17,12 @@ function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+function removeTrailingZeros(number) {
+    let str = number.toString();
+    str = str.replace(/\.?0*$/, '');
+    return parseFloat(str);
+}
+
 const form = useForm({
     tripID: 0,
 });
@@ -38,7 +44,7 @@ const onClick = (tripId) => {
                 <div class="grid grid-cols-1 pb-8 text-center mt-10">
                     <h3 class="mb-3 text-3xl leading-normal font-medium text-white">{{ capitalizeFirstLetter(filters.fromCity) }} to {{ capitalizeFirstLetter(filters.toCity) }}</h3>
                     <ul class="list-none">
-                        <li class="inline text-white/60"> <span class="text-white">Date :</span> {{filters.date}}</li>
+                        <li class="inline text-white/60"> <span class="text-white">Date :</span> {{ filters.date }}</li>
                     </ul>
                 </div>
             </div>
@@ -55,8 +61,11 @@ const onClick = (tripId) => {
                                     <div class="col-span-2">
                                         <p class="text-lg font-bold">From: {{ trip.from }}</p>
                                         <p class="text-lg font-bold">To: {{ trip.to }}</p>
-                                        <p class="text-lg font-bold">Trip Price: {{ trip.trip_price }}</p>
-                                        <p class="text-lg font-bold mb-20">Trip Time: {{ trip.trip_time }}</p>
+                                        <p class="text-lg font-bold">Trip Price: {{ removeTrailingZeros(trip.trip_price) }}</p>
+                                        <p class="text-lg font-bold">Trip Time: {{ trip.trip_time }}</p>
+                                        <p class="text-lg font-bold">Bus Class: {{ trip.bus.bus_class }}</p>
+                                        <p class="text-lg font-bold">Bus Modal: {{ trip.bus.bus_modal }}</p>
+                                        <p class="text-lg font-bold mb-20">Bus Color: {{ trip.bus.bus_color }}</p>
                                         <button type="button" @click="onClick(trip.id)"
                                               class="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md w-full">Book trip</button>
                                     </div>

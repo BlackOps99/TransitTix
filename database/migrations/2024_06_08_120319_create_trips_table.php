@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\TripStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,6 +19,7 @@ return new class extends Migration
             $table->enum('trip_type', TripTypes::getEnumsArray())->default(TripTypes::CITY_TO_CITY);
             $table->enum('from', TripCitys::getEnumsArray());
             $table->enum('to', TripCitys::getEnumsArray());
+            $table->enum('status', TripStatus::getEnumsArray());
             $table->unsignedBigInteger('bus_id');
             $table->foreign('bus_id')->references('id')->on('buses')->onUpdate('cascade');
             $table->decimal('trip_price', 15, 4);

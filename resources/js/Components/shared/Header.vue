@@ -83,7 +83,11 @@ const isAuthenticated = computed(() => !!user);
                 </ul>
                 <ul v-else class="list-none menu-social mb-0">
                     <li class="inline">
-                        <Link :onFinish="user = null" :href="route('logout')" method="post" as="button"
+                        <Link :href="route('profile.index')"
+                              class="btn btn-sm bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full">Profile</Link>
+                    </li>
+                    <li class="inline">
+                        <Link :onFinish="route('home')" :href="route('logout')" method="post" as="button"
                               class="btn btn-sm bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full">Logout</Link>
                     </li>
                 </ul>

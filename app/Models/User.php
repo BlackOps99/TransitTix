@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enums\TripStatus;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -39,7 +40,8 @@ class User extends Authenticatable
     }
 
     protected $with = [
-        'bookedTrips'
+        'bookedTrips',
+        'comingTrips'
     ];
 
     public function getFullNameAttribute(): string
@@ -47,8 +49,13 @@ class User extends Authenticatable
         return $this->first_name.' '.$this->last_name;
     }
 
+    public function comingTrips(): HasMany
+    {
+        return $this->hasMany(BookedTrip::class)->whereHas('trip', fn($query) => $query->where('status', TripStatus::PENDING));
+    }
+
     public function bookedTrips(): HasMany
     {
-        return $this->hasMany(BookedTrip::class);
+        return $this->hasMany(BookedTrip::class)->whereHas('trip', fn($query) => $query->where('status', TripStatus::COMPLETED));
     }
 }

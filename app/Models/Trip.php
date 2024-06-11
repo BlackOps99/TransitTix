@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Trip extends Model
 {
@@ -14,9 +14,9 @@ class Trip extends Model
         'bus'
     ];
 
-    public function bus(): HasOne
+    public function bus(): BelongsTo
     {
-        return $this->hasOne(Bus::class);
+        return $this->belongsTo(Bus::class);
     }
 
     public function scopeFilter($query, array $filters)

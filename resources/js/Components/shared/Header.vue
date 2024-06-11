@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
-import { Link } from '@inertiajs/vue3';
+import { ref, onMounted, onUnmounted, computed } from "vue";
+import {Link, usePage} from '@inertiajs/vue3';
 
 const active = ref('#home');
 
@@ -52,6 +52,10 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
 });
+
+const user = usePage().props.auth.user;
+
+const isAuthenticated = computed(() => !!user);
 </script>
 
 <template>
@@ -63,7 +67,7 @@ onUnmounted(() => {
 
             <div class="nav-icons flex items-center lg_992:order-2 ms-auto">
                 <!-- Navbar Button -->
-                <ul class="list-none menu-social mb-0">
+                <ul v-if="!isAuthenticated" class="list-none menu-social mb-0">
                     <li class="inline">
                         <Link :href="route('login')"
                               :class="{'hidden': route().current('login')}" class="btn btn-sm bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full">Login</Link>
@@ -71,6 +75,12 @@ onUnmounted(() => {
                     <li class="inline">
                         <Link :href="route('register')"
                               :class="{'hidden': route().current('register')}" class="btn btn-sm bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full">Register</Link>
+                    </li>
+                </ul>
+                <ul v-else class="list-none menu-social mb-0">
+                    <li class="inline">
+                        <Link :onFinish="user = null" :href="route('logout')" method="post" as="button"
+                              class="btn btn-sm bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full">Logout</Link>
                     </li>
                 </ul>
                 <!-- Navbar Collapse Manu Button -->

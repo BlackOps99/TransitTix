@@ -1,11 +1,12 @@
 <script setup>
 import { computed } from "vue";
 import MainLayout from "@/Layouts/MainLayout.vue";
+import {useForm} from "@inertiajs/vue3";
 
 const props = defineProps({
     filters: Object,
     triosCount: Number,
-    trips: Array,
+    trips: Object,
 });
 
 const gridClass = computed(() => {
@@ -15,6 +16,18 @@ const gridClass = computed(() => {
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+const form = useForm({
+    tripID: 0,
+});
+
+const onClick = (tripId) => {
+    form.tripID = tripId;
+    console.log(tripId)
+    form.submit('post', route('book_trip.store'), {
+        preserveScroll: true,
+    });
+};
 </script>
 
 <template>
@@ -36,17 +49,17 @@ function capitalizeFirstLetter(str) {
                     <div class="col-span-full">
                         <div :class="gridClass">
                             <template v-if="triosCount > 0" v-for="trip in trips.data" :key="trip.id">
-                                <div class="col-span-2">
-                                    <img src="/images/home/bg.jpg" class="rounded-md" alt="">
-                                </div>
-                                <div class="col-span-2">
-                                    <p class="text-lg font-bold">From: {{ trip.from }}</p>
-                                    <p class="text-lg font-bold">To: {{ trip.to }}</p>
-                                    <p class="text-lg font-bold">Trip Price: {{ trip.trip_price }}</p>
-                                    <p class="text-lg font-bold mb-20">Trip Time: {{ trip.trip_time }}</p>
-                                    <button
-                                          class="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md w-full">Book trip</button>
-                                </div>
+                                    <div class="col-span-2">
+                                        <img src="/images/home/bg.jpg" class="rounded-md" alt="">
+                                    </div>
+                                    <div class="col-span-2">
+                                        <p class="text-lg font-bold">From: {{ trip.from }}</p>
+                                        <p class="text-lg font-bold">To: {{ trip.to }}</p>
+                                        <p class="text-lg font-bold">Trip Price: {{ trip.trip_price }}</p>
+                                        <p class="text-lg font-bold mb-20">Trip Time: {{ trip.trip_time }}</p>
+                                        <button type="button" @click="onClick(trip.id)"
+                                              class="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md w-full">Book trip</button>
+                                    </div>
                             </template>
                             <div v-else>
                                 <div class="col-span-2"></div>

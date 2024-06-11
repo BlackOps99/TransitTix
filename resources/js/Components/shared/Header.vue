@@ -6,7 +6,9 @@ const active = ref('#home');
 
 const toggleMenu = () => {
     let ele = document.getElementById('menu-collapse');
-    ele.classList.toggle('hidden');
+    if (ele) {
+        ele.classList.toggle('hidden');
+    }
 }
 
 const handleScroll = (ev) => {
@@ -36,7 +38,9 @@ const handleScroll = (ev) => {
 const ScrollIntoView = (elem) => {
     active.value = elem;
     let ele = document.querySelector(elem);
-    ele.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (ele) {
+        ele.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 };
 
 onMounted(() => {

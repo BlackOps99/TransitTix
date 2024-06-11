@@ -11,7 +11,9 @@ import InputError from '@/Components/form-elements/InputError.vue';
 
 const ScrollIntoView = (elem) => {
     let ele = document.querySelector(elem);
-    ele.scrollIntoView({behavior: 'smooth', block: 'start'});
+    if (ele) {
+        ele.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
 }
 
 const form = useForm({

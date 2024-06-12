@@ -14,7 +14,7 @@ enum TripStatus: string
     case IN_PROGRESS = 'in_progress';
     case COMPLETED = 'completed';
 
-    public static function getEnums(): array
+    public static function getEnumsArray(): array
     {
         return [
             self::PENDING->value,

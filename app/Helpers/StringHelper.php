@@ -2,6 +2,8 @@
 
 namespace App\Helpers;
 
+use Illuminate\Support\Str;
+
 class StringHelper
 {
     public static function convertToCamelCase(string $string): string

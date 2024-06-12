@@ -18,6 +18,8 @@
         "vue": "^3.4.0"
     },
     "dependencies": {
-        "flowbite": "^2.3.0"
+        "flowbite": "^2.3.0",
+        "lodash": "^4.17.21",
+        "primevue": "^3.52.0"
     }
 }
